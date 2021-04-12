@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>RYED | Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<!-- / Logo -->
+  <div class="heading">
+    <img src="images/logo.png">
+  </div>
+<!-- / Fond -->
+<div class='swanky'>
+
+<!-- / NAVBAR -->
+  <div class='swanky_wrapper'>
+      <input id='Dashboard' name='radio' type='radio'>
+    <label for='Dashboard'>
+        <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/dash.png'>
+        <span>Dashboard</span>
+        <div class='lil_arrow'></div>
+        <div class='bar'></div>
+      <div class='swanky_wrapper__content'>
+
+        <!-- / Bouton Toggles -->
+          <ul>
+            <label class='toggle-label'>
+              <input onclick="maFonction()" type='checkbox'/>Twitter
+                <span class='back toggle1'>
+                <span class='toggle'></span>
+                </span>
+            </label>
+
+            <label class='toggle-label'>
+              <input onclick="maFonction1()"type='checkbox'/>Weather
+                <span class='back toggle2'>
+                <span class='toggle'></span>
+                </span>
+            </label>
+
+            <label class='toggle-label'>
+              <input onclick="maFonction2()"type='checkbox'/>Converter
+                <span class='back toggle3'>
+                <span class='toggle'></span>
+                </span>
+            </label>
+
+            <label class='toggle-label'>
+              <input onclick="maFonction3()"type='checkbox'/>Exchange
+                <span class='back toggle4'>
+                <span class='toggle'></span>
+                </span>
+            </label>
+
+            <label class='toggle-label'>
+              <input onclick="maFonction4()"type='checkbox'/>Weather2
+                <span class='back toggle5'>
+                <span class='toggle'></span>
+                </span>
+            </label>
+
+            <label class='toggle-label'>
+              <input onclick="maFonction5()"type='checkbox'/>LiveRates
+                <span class='back toggle6'>
+                <span class='toggle'></span>
+                </span>
+            </label>
+
+            <label class='toggle-label'>
+              <input onclick="maFonction6()"type='checkbox'/>TechnicalCharts
+                <span class='back toggle7'>
+                <span class='toggle'></span>
+                </span>
+            </label>
+            
+            <label class='toggle-label'>
+              <input onclick="maFonction7()"type='checkbox'/>Time
+                <span class='back toggle8'>
+                <span class='toggle'></span>
+                </span>
+            </label>
+
+            <label class='toggle-label'>
+              <input onclick="maFonction8()"type='checkbox'/>Game
+                <span class='back toggle9'>
+                <span class='toggle'></span>
+                </span>
+            </label>
+
+            <label class='toggle-label'>
+              <input onclick="maFonction9()"type='checkbox'/>Fish
+                <span class='back toggle10'>
+                <span class='toggle'></span>
+                </span>
+            </label>
+          </ul>
+        <!-- / Fin Bouton Toggles -->
+      </div>
+    </label>
+    
+    
+      <input id='Users' name='radio' type='radio'>
+      <label for='Users'>
+        <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/users.png'>
+        <span>Users</span>
+        <div class='lil_arrow'></div>
+        <div class='bar'></div>
+        <div class='swanky_wrapper__content'>
+          <ul>
+            <label class='toggle-label'>
+              <c:if test="${ !empty sessionScope.login && !empty sessionScope.pass }">
+        <span>Email : ${ sessionScope.login }<br> MDP : ${ sessionScope.pass }<br></span>
+                          <a href="unlogin.jsp" style="color:white" class="btn">Log Out</a>
+        
+    </c:if>
+    
+    <!-- LOG Google -->
+    <c:if test="${ empty sessionScope.login && empty sessionScope.pass }">
+ <br>
+<a href="Log_Google.jsp" style="color:white" class="btn">Log Out</a>
+    </c:if>
+<!-- LOG Google fin -->
+            </label>
+
+          </ul>
+        </div>
+      </label>
+    </div>
+
+  <!--CONTENTS -->
+
+    <section id="list">
+      <!--METEO -->
+      <main id="maDIV1"   style="display:none;" class="content-color margin">
+                  <script>
+                    function maFonction1() {
+                      var div = document.getElementById("maDIV1");
+                      if (div.style.display === "none") {
+                        div.style.display = "block";
+                      } else {
+                        div.style.display = "none";
+                      }
+                    }
+                  </script>
+          
+        <div class="feed-grid">
+          <div class="card-half wide">
+            <div class="card-img">
+              <span class="label"> 
+                <section class="top-banner">
+                  <div class="container" id="div1" class="divRec">
+                    <h1 class="heading">Weather</h1>
+                    <form>
+                      <input type="text" placeholder="Search for a city" autofocus>
+                      <button type="submit">SUBMIT</button>
+                    </form>
+              
+                <div  class="ajax-section">
+                  <div class="container">
+                    <ul class="cities"></ul>
+                  </div>
+                </div>
+
+      </main>
+
+      <!--TWITTER -->
+      <main id="maDIV"   style="display:none;" class="content content-twitter">
+                  <script>
+                    function maFonction() {
+                      var div = document.getElementById("maDIV");
+                      if (div.style.display === "none") {
+                        div.style.display = "block";
+                      } else {
+                        div.style.display = "none";
+                      }
+                    }
+                  </script>
+        
+        <div class="container" id="div" class="divQuadc">
+          <form>
+            <a  class="twitter-timeline" href="https://twitter.com/Super_Ryan_2"
+              data-width="600"
+              data-height="320">
+            </a> 
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </form>
+        </div>
+      </main>
+      <!--Widget 1 -->
+
+      <main id="maDIV3"   style="display:none;" class="content content-twitter">
+        <script>
+          function maFonction2() {
+            var div = document.getElementById("maDIV3");
+            if (div.style.display === "none") {
+              div.style.display = "block";
+            } else {
+              div.style.display = "none";
+            }
+          }
+        </script>
+
+        <div class="container" id="div" class="divQuadc">
+          <form>
+            <!-- Currency Converter Script - EXCHANGERATEWIDGET.COM -->
+<div style="width:198px;border:1px solid #000000;"><div style="text-align:center;background-color:#081200;width:100%;font-size:13px;font-weight:bold;height:18px;padding-top:2px;"><a href="https://www.exchangeratewidget.com/" style="color:#FFFFFF;text-decoration:none;" rel="nofollow">Currency Converter</a></div><script type="text/javascript" src="//www.exchangeratewidget.com/converter.php?l=en&f=USD&t=EUR&a=1&d=050000&n=FFFFFF&o=000000&v=1"></script></div>
+<!-- End of Currency Converter Script -->
+          </form>
+        </div>
+      </main>
+
+      <!--Widget 2 -->
+
+      <main id="maDIV4"   style="display:none;" class="content wigdet2">
+        <script>
+          function maFonction3() {
+            var div = document.getElementById("maDIV4");
+            if (div.style.display === "none") {
+              div.style.display = "block";
+            } else {
+              div.style.display = "none";
+            }
+          }
+        </script>
+
+        <div class="container" id="div" class="divQuadc">
+          <form>
+            <!-- Exchange Rates Script - EXCHANGERATEWIDGET.COM -->
+<div style="width:198px;border:1px solid #000000;text-align:left;"><div style="text-align:left;background-color:#000000;width:100%;border-bottom:0px;height:16px; font-size:12px;font-weight:bold;padding:5px 0px;"><span style="margin-left:2px;background-image:url(//www.exchangeratewidget.com/flag.png); background-position: 0 -1232px; width:100%; height:15px; background-repeat:no-repeat;padding-left:5px;"><a href="https://www.exchangeratewidget.com/" style="color:#FFFFFF; text-decoration:none;padding-left:22px;" rel="nofollow">US Dollar Exchange Rates</a></span></div><script type="text/javascript" src="//www.exchangeratewidget.com/converter.php?l=en&f=USD&t=EUR,GBP,JPY,CHF,CAD,AUD,CNY,ZAR,RUB,BRL,HKD,MXN,&a=1&d=000000&n=FFFFFF&o=000000&v=5"></script></div>
+<!-- End of Exchange Rates Script -->
+          </form>
+        </div>
+      </main>
+
+      <!--Widget 3 -->
+
+      <main id="maDIV5"   style="display:none;" class="content wigdet2">
+        <script>
+          function maFonction4() {
+            var div = document.getElementById("maDIV5");
+            if (div.style.display === "none") {
+              div.style.display = "block";
+            } else {
+              div.style.display = "none";
+            }
+          }
+        </script>
+
+        <div class="container" id="div" class="divQuadc">
+          <a class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="NEW YORK" data-label_2="WEATHER" data-theme="original" >NEW YORK WEATHER</a>
+          <script>
+          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+          </script>
+        </div>
+      </main>
+
+      <!--Widget 4 -->
+
+      <main id="maDIV6"   style="display:none;" class="content wigdet2">
+        <script>
+          function maFonction5() {
+            var div = document.getElementById("maDIV6");
+            if (div.style.display === "none") {
+              div.style.display = "block";
+            } else {
+              div.style.display = "none";
+            }
+          }
+        </script>
+
+        <div class="container" id="div" class="divQuadc">
+          <form>
+            <!-- Currency Rates Script - EXCHANGERATEWIDGET.COM -->
+<div style="width:240px; border:1px solid #000000;"><p style="background-color:#000000;margin:0px; height:24px;text-align:center;color:#FFFFFF; font-weight:bold;font-size:16px;padding-top:2px;"><a href="https://www.exchangeratewidget.com/" style="color:#FFFFFF;text-decoration:none;" rel="nofollow">Live Currency Rates</a></p><script type="text/javascript" src="//www.exchangeratewidget.com/converter.php?l=en&f=USD&t=USDEUR,USDGBP,USDJPY,USDCHF,USDCAD,USDAUD,EURGBP,EURJPY,EURAUD,EURRUB,GBPJPY,&a=1&d=000000&n=000000&o=000000&v=9"></script></div>
+<!-- End of Currency Rates Script -->
+          </form>
+        </div>
+      </main>
+      
+      <!--Widget 5 -->
+
+      <main id="maDIV7"   style="display:none;" class="content wigdet2">
+        <script>
+          function maFonction6() {
+            var div = document.getElementById("maDIV7");
+            if (div.style.display === "none") {
+              div.style.display = "block";
+            } else {
+              div.style.display = "none";
+            }
+          }
+        </script>
+
+        <div class="container" id="div" class="divQuadc">
+          <form>
+            <iframe height="480" width="650" src="https://ssltvc.forexprostools.com/?pair_ID=8853&height=480&width=650&interval=300&plotStyle=area&domain_ID=5&lang_ID=5&timezone_ID=13"></iframe>
+          </form>
+        </div>
+      </main>             
+            
+      <!--Widget 6 -->
+
+      <main id="maDIV8"   style="display:none;" class="content wigdet2">
+        <script>
+          function maFonction7() {
+            var div = document.getElementById("maDIV8");
+            if (div.style.display === "none") {
+              div.style.display = "block";
+            } else {
+              div.style.display = "none";
+            }
+          }
+        </script>
+
+        <div class="container" id="div" class="divQuadc">
+          <form>
+            <a href="https://time.is/France" id="time_is_link" rel="nofollow" style="font-size:36px;color:#FFFFFF;background:#000">Heure à France :</a>
+<span id="France_z71f" style="font-size:36px;color:#FFFFFF;background:#000"></span>
+<script src="//widget.time.is/t.js"></script>
+<script>
+time_is_widget.init({France_z71f:{}});
+</script>
+
+          </form>
+        </div>
+      </main>
+       
+      <!--Widget 7 -->
+
+      <main id="maDIV9"   style="display:none;" class="content wigdet2">
+        <script>
+          function maFonction8() {
+            var div = document.getElementById("maDIV9");
+            if (div.style.display === "none") {
+              div.style.display = "block";
+            } else {
+              div.style.display = "none";
+            }
+          }
+        </script>
+
+        <div class="container" id="div" class="divQuadc">
+          <form>
+          <embed src="http://www.pageplugins.com/generators/puzzlemaker/show.swf?baseURL=http://www.pageplugins.com/generators/puzzlemaker/&clickURL=http://www.pageplugins.com/&type=0&picture=http://www.pageplugins.com/generators/puzzlemaker/images/digital/2.jpg&pieceColorOff=13421772&pieceColorOn=16711680&borderColor=0&pieceBorder=3&rezX=2&rezY=2&message=Congratulations%21%21%21%20You%27ve%20finished%20the%20puzzle%21%21%21" quality="high" bgcolor="#ffffff" width="400" height="300" name="show" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /></embed><br><a href="http://www.pageplugins.com/">Cool Myspace Generators</a>
+          </form>
+        </div>
+      </main>
+            
+      <!--Widget 8 -->
+
+          <main id="maDIV10"   style="display:none;" class="content wigdet2">
+            <script>
+              function maFonction9() {
+                var div = document.getElementById("maDIV10");
+                if (div.style.display === "none") {
+                  div.style.display = "block";
+                } else {
+                  div.style.display = "none";
+                }
+              }
+            </script>
+    
+            <div class="container" id="div" class="divQuadc">
+              <form>
+                <embed src='http://www.pageplugins.com/generators/virtual_fish/fish2.swf' quality='high' wmode=Transparent allowScriptAccess="never" width='400' height='400' type='application/x-shockwave-flash' pluginspage='http://www.macromedia.com/go/getflashplayer'/></embed><br><a href='http://www.pageplugins.com/generators/virtual_fish/' target='_blank'>Virtual Pet Fish</a>
+              </form>
+            </div>
+          </main>
+
+              
+            
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      </section>
+        </div>
+
+<!-- Partial -->
+<script  src="/WEB-INF/script.js"></script>
+
+</body>
+</html>
